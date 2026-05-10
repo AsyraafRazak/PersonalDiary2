@@ -1,9 +1,13 @@
+const dns = require('dns');
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 
 dotenv.config();
+
+// Set DNS servers to Cloudflare to ensure reliable resolution of MongoDB Atlas SRV records
+dns.setServers(['1.1.1.1', '1.0.0.1']);
 
 const app = express();
 
