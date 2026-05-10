@@ -27,6 +27,7 @@ function Register() {
 
             alert('Register Success');
         } catch (error) {
+            console.error('Registration error:', error);
             alert(error.response?.data?.message || 'Registration failed');
         }
     };
